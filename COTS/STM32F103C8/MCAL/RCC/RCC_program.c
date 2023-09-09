@@ -78,6 +78,9 @@ Std_ReturnType Mcal_Rcc_InitSysClock (void)
 
 /**
  * I'm Not sure about the fun and didn't know how to make it in the uper fun
+ * 
+ * 
+ * 
 */
 
 Std_ReturnType Mcal_Rcc_Pll_Mul (u8 MUL_FACTOR)
