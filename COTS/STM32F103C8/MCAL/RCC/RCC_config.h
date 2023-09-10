@@ -1,8 +1,8 @@
 /***********************************************************************/
 /********** Athor     : Hisham Hatem Hassan Mostafa ********************/
-/********** Date      : 2 sep 2023                  ********************/
-/********** Version   : 0.1                         ********************/
-/********** File Name : RCC_config.h           *************************/
+/********** Date      : 9 sep 2023                  ********************/
+/********** Version   : 0.2                         ********************/
+/********** File Name : RCC_config.h                ********************/
 /***********************************************************************/
 #ifndef RCC_CONFIG_H_
 #define RCC_CONFIG_H_
@@ -49,6 +49,21 @@
 
 
 #define RCC_PLL_MUL_FACTOR   PLL_MUL_2
+
+
+/**
+ *  Your Options :      SYSCLK_DIV_2  
+ *                      SYSCLK_DIV_4  
+ *                      SYSCLK_DIV_8  
+ *                      SYSCLK_DIV_16 
+ *                      SYSCLK_DIV_32 
+ *                      SYSCLK_DIV_64 
+ *                      SYSCLK_DIV_128
+ *                      SYSCLK_DIV_256
+ *                      SYSCLK_DIV_512
+*/
+
+#define RCC_SYSCLOCK_DIV    SYSCLK_DIV_2
 
 
 

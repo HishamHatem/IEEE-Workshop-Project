@@ -1,7 +1,7 @@
 /***********************************************************************/
 /********** Athor     : Hisham Hatem Hassan Mostafa ********************/
-/********** Date      : 2 sep 2023                  ********************/
-/********** Version   : 0.1                         ********************/
+/********** Date      : 9 sep 2023                  ********************/
+/********** Version   : 0.2                         ********************/
 /********** File Name : RCC_private.h               ********************/
 /***********************************************************************/
 #ifndef RCC_PRIVATE_H_
@@ -42,22 +42,33 @@
 #define RCC_CRYSTAL_CLK_          0
 
 
-#define PLL_MUL_2               0b0000
-#define PLL_MUL_3               0b0001
-#define PLL_MUL_4               0b0010
-#define PLL_MUL_5               0b0011
-#define PLL_MUL_6               0b0100
-#define PLL_MUL_7               0b0101
-#define PLL_MUL_8               0b0110
-#define PLL_MUL_9               0b0111
-#define PLL_MUL_10              0b1000
-#define PLL_MUL_11              0b1001
-#define PLL_MUL_12              0b1010
-#define PLL_MUL_13              0b1011
-#define PLL_MUL_14              0b1100
-#define PLL_MUL_15              0b1101
-#define PLL_MUL_16              0b1110
-#define PLL_MUL_16              0b1111
+#define PLL_MUL_2               0b0000000000000000000000
+#define PLL_MUL_3               0b0001000000000000000000
+#define PLL_MUL_4               0b0010000000000000000000
+#define PLL_MUL_5               0b0011000000000000000000
+#define PLL_MUL_6               0b0100000000000000000000
+#define PLL_MUL_7               0b0101000000000000000000
+#define PLL_MUL_8               0b0110000000000000000000
+#define PLL_MUL_9               0b0111000000000000000000
+#define PLL_MUL_10              0b1000000000000000000000
+#define PLL_MUL_11              0b1001000000000000000000
+#define PLL_MUL_12              0b1010000000000000000000
+#define PLL_MUL_13              0b1011000000000000000000
+#define PLL_MUL_14              0b1100000000000000000000
+#define PLL_MUL_15              0b1101000000000000000000
+#define PLL_MUL_16              0b1110000000000000000000
+#define PLL_MUL_16              0b1111000000000000000000
+
+
+#define SYSCLK_DIV_2            0b00000000
+#define SYSCLK_DIV_4            0b10000000
+#define SYSCLK_DIV_8            0b10010000
+#define SYSCLK_DIV_16           0b10100000
+#define SYSCLK_DIV_32           0b10110000
+#define SYSCLK_DIV_64           0b11000000
+#define SYSCLK_DIV_128          0b11010000
+#define SYSCLK_DIV_256          0b11100000
+#define SYSCLK_DIV_512          0b11110000
 
 
 

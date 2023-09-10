@@ -1,8 +1,8 @@
 /***********************************************************************/
 /********** Athor     : Hisham Hatem Hassan Mostafa ********************/
-/********** Date      : 2 sep 2023                  ********************/
-/********** Version   : 0.1                         ********************/
-/********** File Name : RCC_interface.h        ********************/
+/********** Date      : 9 sep 2023                  ********************/
+/********** Version   : 0.2                         ********************/
+/********** File Name : RCC_interface.h             ********************/
 /***********************************************************************/
 #ifndef RCC_INTERFACE_H_
 #define RCC_INTERFACE_H_
@@ -60,6 +60,10 @@
 
 
 Std_ReturnType Mcal_Rcc_InitSysClock (void); 
+
+Std_ReturnType Mcal_Rcc_Pll_Mul (void);
+
+Std_ReturnType Mcal_Rcc_SysClock_Div (void);
 
 Std_ReturnType Mcal_Rcc_EnablePeripheral (u8 Copy_BudId, u8 Copy_PeriphralId);
 

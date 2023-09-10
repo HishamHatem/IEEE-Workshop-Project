@@ -1,8 +1,8 @@
 /***********************************************************************/
 /********** Athor     : Hisham Hatem Hassan Mostafa ********************/
-/********** Date      : 2 sep 2023                  ********************/
-/********** Version   : 0.1                         ********************/
-/********** File Name : RCC_program.c          ********************/
+/********** Date      : 9 sep 2023                  ********************/
+/********** Version   : 0.2                         ********************/
+/********** File Name : RCC_program.c               ********************/
 /***********************************************************************/
 
 /********************************< LIB *********************************/
@@ -57,7 +57,7 @@ Std_ReturnType Mcal_Rcc_InitSysClock (void)
 
     #elif RCC_SYSCLK == RCC_PLL
         /**< Enable HSI */
-        SET_BIT(RCC_CR, RCC_RC_PLLON);
+        SET_BIT (RCC_CR, RCC_RC_PLLON);
 
         /**< Wait until the CLK be stable */
         while(!GET_BIT(RCC_CR, RCC_RC_PLLRDY));
@@ -88,14 +88,28 @@ Std_ReturnType Mcal_Rcc_InitSysClock (void)
  * 
 */
 
-Std_ReturnType Mcal_Rcc_Pll_Mul (u8 MUL_FACTOR)
+Std_ReturnType Mcal_Rcc_Pll_Mul (void)
 {
+    Std_ReturnType Local_FunctionStatus = E_NOT_OK;
     #if RCC_SYSCLK == RCC_PLL
         
-        RCC_PLL_MUL_FACTOR
+        RCC_CFGR += RCC_PLL_MUL_FACTOR ;
 
-
+        Local_FunctionStatus = E_OK;
     #endif /**< RCC_SYSCLK */
+
+    return Local_FunctionStatus ;
+}
+
+Std_ReturnType Mcal_Rcc_SysClock_Div (void)
+{
+    Std_ReturnType Local_FunctionStatus = E_NOT_OK;
+
+    RCC_CFGR += RCC_SYSCLOCK_DIV ;
+
+    Local_FunctionStatus = E_OK;
+
+    return Local_FunctionStatus ;
 }
 
 Std_ReturnType Mcal_Rcc_EnablePeripheral (u8 Copy_BudId, u8 Copy_PeriphralId)
@@ -106,17 +120,17 @@ Std_ReturnType Mcal_Rcc_EnablePeripheral (u8 Copy_BudId, u8 Copy_PeriphralId)
     {
         
         case RCC_AHB :
-            SET_BIT(RCC_AHBENR, Copy_PeriphralId);
+            SET_BIT (RCC_AHBENR, Copy_PeriphralId);
             Local_FunctionStatus = E_OK;
         break;
 
         case RCC_APB1 :
-            SET_BIT(RCC_APB1ENR, Copy_PeriphralId);
+            SET_BIT (RCC_APB1ENR, Copy_PeriphralId);
             Local_FunctionStatus = E_OK;
         break;
 
         case RCC_APB2 :
-            SET_BIT(RCC_APB2ENR, Copy_PeriphralId);
+            SET_BIT (RCC_APB2ENR, Copy_PeriphralId);
             Local_FunctionStatus = E_OK;
         break;
 
@@ -137,17 +151,17 @@ Std_ReturnType Mcal_Rcc_DisablePeripheral (u8 Copy_BudId, u8 Copy_PeriphralId)
     {
         
         case RCC_AHB :
-            CLR_BIT(RCC_AHBENR, Copy_PeriphralId);
+            CLR_BIT (RCC_AHBENR, Copy_PeriphralId);
             Local_FunctionStatus = E_OK;
         break;
 
         case RCC_APB1 :
-            CLR_BIT(RCC_APB1ENR, Copy_PeriphralId);
+            CLR_BIT (RCC_APB1ENR, Copy_PeriphralId);
             Local_FunctionStatus = E_OK;
         break;
 
         case RCC_APB2 :
-            CLR_BIT(RCC_APB2ENR, Copy_PeriphralId);
+            CLR_BIT (RCC_APB2ENR, Copy_PeriphralId);
             Local_FunctionStatus = E_OK;
         break;
 
