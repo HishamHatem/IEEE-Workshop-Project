@@ -76,17 +76,7 @@ Std_ReturnType Mcal_Rcc_InitSysClock (void)
     return Local_FunctionStatus ;
 } 
 
-/**
- * I'm Not sure about the fun and didn't know how to make it in the uper fun
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
-*/
+
 
 Std_ReturnType Mcal_Rcc_Pll_Mul (void)
 {
